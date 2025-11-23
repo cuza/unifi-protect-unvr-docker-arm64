@@ -50,6 +50,5 @@
     "debug": "bool",
     "debug_storage": "bool",
     "debug_unifi_core": "bool"
-  },
-  "image": "ghcr.io/dciancu/unifi-protect-unvr-{arch}"
+  }
 }

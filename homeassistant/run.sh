@@ -32,9 +32,10 @@ export container=docker
 # Create symlinks if needed for storage directories
 if [ ! -L /srv ] && [ ! -d /srv ]; then
     bashio::log.info "Setting up storage directories..."
+    # Create target directory first
+    mkdir -p /media/unifi-protect/srv
     # Use /media for video storage (larger capacity)
     ln -sf /media/unifi-protect/srv /srv || true
-    mkdir -p /media/unifi-protect/srv
 fi
 
 if [ ! -d /data/unifi-protect ]; then
