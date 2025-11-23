@@ -158,10 +158,14 @@ For remote access via UniFi Cloud to work properly, the primary network interfac
    ```
    Replace `xx:xx:xx:xx:xx:xx` with your actual MAC address.
 
-2. Update initramfs:
+2. Update initramfs (for Debian/Ubuntu-based systems):
    ```bash
    sudo update-initramfs -u
    ```
+   
+   **Note:** For other distributions, use the appropriate command to rebuild the initramfs:
+   - **Red Hat/Fedora/CentOS**: `sudo dracut -f`
+   - **Arch Linux**: `sudo mkinitcpio -P`
 
 3. Reboot the host machine
 

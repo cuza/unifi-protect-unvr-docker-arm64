@@ -1,4 +1,6 @@
 #!/usr/bin/with-contenv bashio
+# bashio is the Home Assistant addon helper library
+# See: https://github.com/hassio-addons/bashio
 
 set -e
 
@@ -35,16 +37,21 @@ if [ ! -L /srv ] && [ ! -d /srv ]; then
     # Create target directory first
     mkdir -p /media/unifi-protect/srv
     # Use /media for video storage (larger capacity)
-    ln -sf /media/unifi-protect/srv /srv || true
+    if ! ln -sf /media/unifi-protect/srv /srv; then
+        bashio::log.warning "Failed to create symlink for /srv, using directory instead"
+        mkdir -p /srv
+    fi
 fi
 
 if [ ! -d /data/unifi-protect ]; then
-    mkdir -p /data/unifi-protect
+    if ! mkdir -p /data/unifi-protect; then
+        bashio::log.error "Failed to create /data/unifi-protect directory"
+    fi
 fi
 
 if [ ! -d /persistent/unifi-protect ]; then
-    mkdir -p /persistent || true
-    mkdir -p /persistent/unifi-protect || true
+    mkdir -p /persistent 2>/dev/null || bashio::log.warning "Failed to create /persistent directory"
+    mkdir -p /persistent/unifi-protect 2>/dev/null || bashio::log.warning "Failed to create /persistent/unifi-protect directory"
 fi
 
 bashio::log.info "Starting systemd..."
