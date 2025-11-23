@@ -1,0 +1,27 @@
+configuration:
+  storage_disk:
+    name: Storage Disk
+    description: >-
+      Device path for video storage (e.g., /dev/sda, /dev/mmcblk0).
+      Must be a valid block device accessible within the container.
+  device_type:
+    name: Device Type
+    description: >-
+      UniFi device type to emulate. UNVR is the standard recorder,
+      UNVR_PRO is the pro version with additional features, and ENVR
+      is the enterprise recorder.
+  debug:
+    name: Debug Mode
+    description: >-
+      Enable comprehensive debug logging. When enabled, activates all
+      debug options for troubleshooting.
+  debug_storage:
+    name: Debug Storage
+    description: >-
+      Enable detailed storage operation logging. Logs are written to
+      /var/log/storage_disk_debug.log within the container.
+  debug_unifi_core:
+    name: Debug UniFi Core
+    description: >-
+      Enable debug log level for the unifi-core service to help
+      troubleshoot core system issues.

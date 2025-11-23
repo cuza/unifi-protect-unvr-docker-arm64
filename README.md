@@ -18,7 +18,47 @@ Run UniFi Protect UNVR in Docker on ARM64 hardware.
 > Works on Raspberry Pi (tested with Pi 4 model B 4GB on Debian 12 Bookworm).  
 > Protect 5.0 added support for third-party cameras via ONVIF, [see here](https://help.ui.com/hc/en-us/articles/26301104828439-Third-Party-Cameras-in-UniFi-Protect).
 
-## Usage
+## Home Assistant Addon
+
+This project is also available as a Home Assistant addon! If you're running Home Assistant OS or Supervised, you can install UniFi Protect UNVR directly as an addon for easier management and integration.
+
+### Addon Features
+
+- Seamless integration with Home Assistant
+- Easy configuration through Home Assistant UI
+- Automatic storage management using Home Assistant directories
+- Built-in logging accessible from Home Assistant
+- No need to manage Docker Compose files manually
+
+### Installation
+
+1. Navigate to **Settings** → **Add-ons** → **Add-on Store** in Home Assistant
+2. Click the menu (⋮) and select **Repositories**
+3. Add this repository URL
+4. Find "UniFi Protect UNVR" in the add-on list
+5. Install and configure the addon
+
+For detailed addon documentation, see the [homeassistant/](homeassistant/) directory:
+- [Addon README](homeassistant/README.md) - Quick overview
+- [Addon Documentation](homeassistant/DOCS.md) - Complete configuration guide
+- [Addon Changelog](homeassistant/CHANGELOG.md) - Version history
+
+### Standalone Docker vs Home Assistant Addon
+
+Choose the installation method that best fits your setup:
+
+| Feature | Standalone Docker | Home Assistant Addon |
+|---------|------------------|---------------------|
+| Installation | Manual Docker Compose | One-click in HA UI |
+| Configuration | docker-compose.override.yml | HA Configuration UI |
+| Updates | Manual rebuild | Click to update in HA |
+| Logging | docker compose logs | Built-in HA logs |
+| Storage | Manual volume mapping | HA media/config dirs |
+| Best For | Dedicated hardware | Home Assistant systems |
+
+Both methods use the same underlying container and provide identical UniFi Protect functionality.
+
+## Standalone Docker Usage
 
 You need to build the image using the `build.sh` script or `Dockerfile` (see [Building](#building) and [Config](#config) sections for details).  
 This repo doesn't have prebuilt images available. This is to prevent redistribution of Ubiquiti's intelectual property.
