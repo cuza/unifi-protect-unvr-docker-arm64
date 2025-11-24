@@ -42,21 +42,19 @@ This repository serves as a Home Assistant addon! The entire repository is struc
 
 For detailed addon documentation, configuration options, and troubleshooting:
 - See the addon's **Documentation** tab in Home Assistant after installation
-- Or view [homeassistant/DOCS.md](homeassistant/DOCS.md) for the complete guide
+- Or view [DOCS.md](DOCS.md) for the complete guide
 
 ### Addon Configuration Files
 
-The addon configuration files are located at the repository root:
-- `config.json` - Addon metadata and configuration schema
-- `build.json` - Build configuration
+The addon follows standard Home Assistant addon structure with files at the repository root:
+- `config.yaml` - Addon metadata and configuration schema
+- `build.yaml` - Build configuration
 - `addon.Dockerfile` - Dockerfile that builds from source
 - `icon.png`, `logo.png` - Addon visual assets
 - `translations/` - Localization files
-
-Documentation files are in the `homeassistant/` directory:
-- `README.md` - Quick overview
-- `DOCS.md` - Complete configuration guide (shown in HA)
+- `DOCS.md` - Complete documentation (shown in HA Documentation tab)
 - `CHANGELOG.md` - Version history
+- `run.sh` - Addon entrypoint script
 
 ### Standalone Docker vs Home Assistant Addon
 

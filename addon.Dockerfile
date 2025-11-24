@@ -214,7 +214,7 @@ LABEL AIFC_STABLE_URL=${AIFC_STABLE_URL}
 LABEL AIFC_UPDATE_URL=${AIFC_UPDATE_URL}
 
 # Home Assistant Addon: Add the addon-specific entrypoint wrapper
-COPY homeassistant/run.sh /run.sh
+COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
 # The run.sh script handles Home Assistant configuration and starts systemd
