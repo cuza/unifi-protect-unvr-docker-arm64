@@ -20,7 +20,7 @@ Run UniFi Protect UNVR in Docker on ARM64 hardware.
 
 ## Home Assistant Addon
 
-This project is also available as a Home Assistant addon! If you're running Home Assistant OS or Supervised, you can install UniFi Protect UNVR directly as an addon for easier management and integration.
+This repository serves as a Home Assistant addon! The entire repository is structured to work as both a standalone Docker container and a Home Assistant addon.
 
 ### Addon Features
 
@@ -28,20 +28,35 @@ This project is also available as a Home Assistant addon! If you're running Home
 - Easy configuration through Home Assistant UI
 - Automatic storage management using Home Assistant directories
 - Built-in logging accessible from Home Assistant
-- No need to manage Docker Compose files manually
+- Builds from source to comply with UniFi licensing
 
 ### Installation
 
 1. Navigate to **Settings** → **Add-ons** → **Add-on Store** in Home Assistant
 2. Click the menu (⋮) and select **Repositories**
-3. Add this repository URL
+3. Add this repository URL: `https://github.com/cuza/unifi-protect-unvr-docker-arm64`
 4. Find "UniFi Protect UNVR" in the add-on list
-5. Install and configure the addon
+5. Click **Install** (this will build from source, taking 30-60 minutes on first install)
+6. Configure the addon (see addon documentation in Home Assistant)
+7. Start the addon
 
-For detailed addon documentation, see the [homeassistant/](homeassistant/) directory:
-- [Addon README](homeassistant/README.md) - Quick overview
-- [Addon Documentation](homeassistant/DOCS.md) - Complete configuration guide
-- [Addon Changelog](homeassistant/CHANGELOG.md) - Version history
+For detailed addon documentation, configuration options, and troubleshooting:
+- See the addon's **Documentation** tab in Home Assistant after installation
+- Or view [homeassistant/DOCS.md](homeassistant/DOCS.md) for the complete guide
+
+### Addon Configuration Files
+
+The addon configuration files are located at the repository root:
+- `config.json` - Addon metadata and configuration schema
+- `build.json` - Build configuration
+- `addon.Dockerfile` - Dockerfile that builds from source
+- `icon.png`, `logo.png` - Addon visual assets
+- `translations/` - Localization files
+
+Documentation files are in the `homeassistant/` directory:
+- `README.md` - Quick overview
+- `DOCS.md` - Complete configuration guide (shown in HA)
+- `CHANGELOG.md` - Version history
 
 ### Standalone Docker vs Home Assistant Addon
 
