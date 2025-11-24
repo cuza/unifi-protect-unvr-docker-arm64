@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for UNVR, UNVR_PRO, and ENVR device emulation
 - Host networking support for full functionality
 - Privileged mode support for systemd and hardware access
+- **Builds from source:** Addon builds UniFi Protect image from source during installation to avoid distributing copyrighted UniFi content (complies with licensing requirements)
 
 ### Features
 - Full UniFi Protect UNVR functionality within Home Assistant
@@ -26,6 +27,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remote access capabilities (with proper network configuration)
 - RTSP streaming support
 - Debug logging options for troubleshooting
+
+### Important Notes
+- **First installation takes 30-60 minutes:** The addon downloads UniFi firmware and builds the complete stack from source. This is a one-time process during initial installation.
+- **No pre-built images:** To comply with UniFi's licensing, the addon does not use pre-built Docker images. It builds everything from official UniFi sources during installation.
 
 ### Requirements
 - Home Assistant OS or Supervised installation

@@ -22,10 +22,11 @@ This addon packages the UniFi Protect UNVR Docker container for easy installatio
 
 1. Add this repository to your Home Assistant addon store
 2. Install the "UniFi Protect UNVR" addon
-3. Configure the addon (see Configuration section)
-4. Start the addon
-5. Navigate to the addon's web interface (typically https://your-ha-ip:443)
-6. Complete the initial UniFi Protect setup
+3. **Note:** The addon will build the UniFi Protect image from source during installation to avoid distributing copyrighted UniFi content. This initial build may take 30-60 minutes depending on your hardware.
+4. Configure the addon (see Configuration section)
+5. Start the addon
+6. Navigate to the addon's web interface (typically https://your-ha-ip:443)
+7. Complete the initial UniFi Protect setup
 
 ## Configuration
 

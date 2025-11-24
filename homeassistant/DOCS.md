@@ -29,6 +29,7 @@ Before installing this addon, ensure your system meets these requirements:
 3. Add this repository URL
 4. Find "UniFi Protect UNVR" in the add-on list
 5. Click on the addon and press **Install**
+6. **Important:** The addon builds UniFi Protect from source to comply with UniFi's licensing. The initial installation will take 30-60 minutes as it downloads and extracts firmware, then builds the complete UniFi Protect stack. This is normal and only happens once during installation.
 
 ## Configuration
 
