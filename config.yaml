@@ -7,10 +7,10 @@ arch:
   - aarch64
 startup: services
 boot: auto
-privileged: true
 host_network: true
 apparmor: false
 init: false
+full_access: true
 ports:
   443/tcp: 443
   80/tcp: 80

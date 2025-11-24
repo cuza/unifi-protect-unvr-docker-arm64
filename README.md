@@ -49,7 +49,8 @@ For detailed addon documentation, configuration options, and troubleshooting:
 The addon follows standard Home Assistant addon structure with files at the repository root:
 - `config.yaml` - Addon metadata and configuration schema
 - `build.yaml` - Build configuration
-- `addon.Dockerfile` - Dockerfile that builds from source
+- `Dockerfile` - Dockerfile that builds from source (addon version)
+- `Dockerfile.standalone` - Original standalone Docker build
 - `icon.png`, `logo.png` - Addon visual assets
 - `translations/` - Localization files
 - `DOCS.md` - Complete documentation (shown in HA Documentation tab)
