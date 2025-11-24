@@ -18,7 +18,61 @@ Run UniFi Protect UNVR in Docker on ARM64 hardware.
 > Works on Raspberry Pi (tested with Pi 4 model B 4GB on Debian 12 Bookworm).  
 > Protect 5.0 added support for third-party cameras via ONVIF, [see here](https://help.ui.com/hc/en-us/articles/26301104828439-Third-Party-Cameras-in-UniFi-Protect).
 
-## Usage
+## Home Assistant Addon
+
+This repository serves as a Home Assistant addon! The entire repository is structured to work as both a standalone Docker container and a Home Assistant addon.
+
+### Addon Features
+
+- Seamless integration with Home Assistant
+- Easy configuration through Home Assistant UI
+- Automatic storage management using Home Assistant directories
+- Built-in logging accessible from Home Assistant
+- Builds from source to comply with UniFi licensing
+
+### Installation
+
+1. Navigate to **Settings** → **Add-ons** → **Add-on Store** in Home Assistant
+2. Click the menu (⋮) and select **Repositories**
+3. Add this repository URL: `https://github.com/cuza/unifi-protect-unvr-docker-arm64`
+4. Find "UniFi Protect UNVR" in the add-on list
+5. Click **Install** (this will build from source, taking 30-60 minutes on first install)
+6. Configure the addon (see addon documentation in Home Assistant)
+7. Start the addon
+
+For detailed addon documentation, configuration options, and troubleshooting:
+- See the addon's **Documentation** tab in Home Assistant after installation
+- Or view [DOCS.md](DOCS.md) for the complete guide
+
+### Addon Configuration Files
+
+The addon follows standard Home Assistant addon structure with files at the repository root:
+- `config.yaml` - Addon metadata and configuration schema
+- `build.yaml` - Build configuration
+- `Dockerfile` - Dockerfile that builds from source (addon version)
+- `Dockerfile.standalone` - Original standalone Docker build
+- `icon.png`, `logo.png` - Addon visual assets
+- `translations/` - Localization files
+- `DOCS.md` - Complete documentation (shown in HA Documentation tab)
+- `CHANGELOG.md` - Version history
+- `run.sh` - Addon entrypoint script
+
+### Standalone Docker vs Home Assistant Addon
+
+Choose the installation method that best fits your setup:
+
+| Feature | Standalone Docker | Home Assistant Addon |
+|---------|------------------|---------------------|
+| Installation | Manual Docker Compose | One-click in HA UI |
+| Configuration | docker-compose.override.yml | HA Configuration UI |
+| Updates | Manual rebuild | Click to update in HA |
+| Logging | docker compose logs | Built-in HA logs |
+| Storage | Manual volume mapping | HA media/config dirs |
+| Best For | Dedicated hardware | Home Assistant systems |
+
+Both methods use the same underlying container and provide identical UniFi Protect functionality.
+
+## Standalone Docker Usage
 
 You need to build the image using the `build.sh` script or `Dockerfile` (see [Building](#building) and [Config](#config) sections for details).  
 This repo doesn't have prebuilt images available. This is to prevent redistribution of Ubiquiti's intelectual property.

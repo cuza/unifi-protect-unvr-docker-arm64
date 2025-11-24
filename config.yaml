@@ -1,0 +1,48 @@
+name: "UniFi Protect UNVR"
+version: "5.8.3"
+slug: "unifi-protect-unvr"
+description: "Run UniFi Protect UNVR in Docker on ARM64 hardware within Home Assistant"
+url: "https://github.com/dciancu/unifi-protect-unvr-docker-arm64"
+arch:
+  - aarch64
+startup: services
+boot: auto
+host_network: true
+apparmor: false
+init: false
+full_access: true
+ports:
+  443/tcp: 443
+  80/tcp: 80
+  7441/tcp: 7441
+  7445/tcp: 7445
+  7446/tcp: 7446
+  7447/tcp: 7447
+  7451/tcp: 7451
+  7550/tcp: 7550
+  7552/tcp: 7552
+ports_description:
+  443/tcp: "Web interface (HTTPS)"
+  80/tcp: "Web interface redirect"
+  7441/tcp: "Devices management"
+  7445/tcp: "Camera HTTPS/WSS"
+  7446/tcp: "RTSP feeds"
+  7447/tcp: "RTSP feeds"
+  7451/tcp: "Camera management"
+  7550/tcp: "Playback"
+  7552/tcp: "Events"
+map:
+  - "config:rw"
+  - "media:rw"
+options:
+  storage_disk: "/dev/sda"
+  device_type: "UNVR"
+  debug: false
+  debug_storage: false
+  debug_unifi_core: false
+schema:
+  storage_disk: str
+  device_type: list(UNVR|UNVR_PRO|ENVR)
+  debug: bool
+  debug_storage: bool
+  debug_unifi_core: bool
